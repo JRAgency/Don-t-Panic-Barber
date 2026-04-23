@@ -49,11 +49,11 @@ export default function MapSection() {
             <div className="absolute bottom-3 left-3 w-4 h-4 border-l border-b border-[#C9A07A]/50 z-10 pointer-events-none" />
             <div className="absolute bottom-3 right-3 w-4 h-4 border-r border-b border-[#C9A07A]/50 z-10 pointer-events-none" />
             <iframe
-              src="https://maps.google.com/maps?q=Mollstra%C3%9Fe+6,+68165+Mannheim,+Germany&output=embed&z=15"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.0623534488433!2d8.462643776888853!3d49.49280987143836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797cc3b05d1e6f3%3A0xb6c2c6e7a4e0a7f!2sMollstra%C3%9Fe%206%2C%2068165%20Mannheim!5e0!3m2!1sde!2sde!4v1714000000000!5m2!1sde!2sde"
               width="100%"
               height="100%"
-              className="map-dark absolute inset-0 w-full h-full"
-              style={{ border: 0, minHeight: '320px' }}
+              className="absolute inset-0 w-full h-full"
+              style={{ border: 0, minHeight: '320px', filter: 'brightness(0.88) contrast(1.05) saturate(0.9)' }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

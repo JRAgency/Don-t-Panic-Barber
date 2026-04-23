@@ -3,7 +3,7 @@ export default function Marquee() {
   const repeated = text.repeat(6)
 
   return (
-    <div className="relative -rotate-[1.5deg] overflow-hidden py-3 my-0 z-10"
+    <div className="relative md:-rotate-[1.5deg] overflow-hidden py-3 my-0 z-10"
       style={{ background: '#C9A07A' }}
     >
       <div className="marquee-track whitespace-nowrap">
