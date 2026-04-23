@@ -22,18 +22,17 @@ export default function GalleryTeaser() {
           </a>
         </div>
 
-        {/* Asymmetric grid */}
+        {/* Asymmetric grid – 3 cols, 2 rows, no empty cells */}
         <div
           className="grid gap-1"
-          style={{ gridTemplateColumns: 'repeat(4, 1fr)', gridTemplateRows: 'repeat(3, 180px)' }}
+          style={{ gridTemplateColumns: 'repeat(3, 1fr)', gridTemplateRows: '320px 220px' }}
         >
-          {/* Large feature item 2×2 */}
+          {/* Wide feature: top-left (2 cols × 1 row) */}
           <div
             className="relative overflow-hidden group"
-            style={{ gridColumn: '1 / 3', gridRow: '1 / 3' }}
+            style={{ gridColumn: '1 / 3' }}
           >
-            <Image src="/Don-t-Panic-Barber/images/cut-1.png" alt="Haarschnitt" fill className="object-cover object-center" />
-            {/* Amber corner accents */}
+            <Image src="/Don-t-Panic-Barber/images/cut-1.png" alt="Haarschnitt" fill className="object-cover object-top" />
             <div className="absolute top-3 left-3 w-5 h-5 border-l border-t border-[#C9A07A]/60 z-10" />
             <div className="absolute bottom-3 right-3 w-5 h-5 border-r border-b border-[#C9A07A]/60 z-10" />
             <div className="absolute inset-0 bg-[#C9A07A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
@@ -44,31 +43,24 @@ export default function GalleryTeaser() {
             </div>
           </div>
 
-          {/* Small items 1×1 */}
-          {[
-            { src: '/Don-t-Panic-Barber/images/cut-2.png', alt: 'Haarschnitt' },
-            { src: '/Don-t-Panic-Barber/images/cut-3.png', alt: 'Haarschnitt' },
-            { src: '/Don-t-Panic-Barber/images/cut-4.png', alt: 'Haarschnitt' },
-          ].map((item) => (
-            <div key={item.src} className="relative overflow-hidden group">
-              <Image src={item.src} alt={item.alt} fill className="object-cover object-top" />
-              <div className="absolute inset-0 bg-[#C9A07A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          ))}
-
-          {/* Wide items 2×1 */}
+          {/* Tall item: right column (1 col × 2 rows) */}
           <div
             className="relative overflow-hidden group"
-            style={{ gridColumn: '1 / 3' }}
+            style={{ gridRow: '1 / 3' }}
           >
+            <Image src="/Don-t-Panic-Barber/images/cut-4.png" alt="Haarschnitt" fill className="object-cover object-top" />
+            <div className="absolute inset-0 bg-[#C9A07A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </div>
+
+          {/* Bottom-left: exterior */}
+          <div className="relative overflow-hidden group">
             <Image src="/Don-t-Panic-Barber/images/exterior.png" alt="Don't Panic Barber Shop" fill className="object-cover object-center" />
             <div className="absolute inset-0 bg-[#C9A07A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
-          <div
-            className="relative overflow-hidden group"
-            style={{ gridColumn: '3 / 5' }}
-          >
-            <Image src="/Don-t-Panic-Barber/images/cut-5.png" alt="Haarschnitt" fill className="object-cover object-top" />
+
+          {/* Bottom-middle: cut */}
+          <div className="relative overflow-hidden group">
+            <Image src="/Don-t-Panic-Barber/images/cut-2.png" alt="Haarschnitt" fill className="object-cover object-top" />
             <div className="absolute inset-0 bg-[#C9A07A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
         </div>
