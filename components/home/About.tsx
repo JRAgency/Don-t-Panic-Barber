@@ -32,7 +32,7 @@ export default function About() {
           <div className="lg:col-span-7 relative">
             <div className="relative aspect-[4/5] overflow-hidden lg:-mr-8">
               <Image
-                src="/images/exterior.png"
+                src="/Don-t-Panic-Barber/images/exterior.png"
                 alt="Don't Panic Barber Shop Mannheim"
                 fill
                 className="object-cover object-center"

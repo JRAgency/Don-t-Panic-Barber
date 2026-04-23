@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden noise">
       {/* Background photo */}
       <Image
-        src="/images/interior-1.png"
+        src="/Don-t-Panic-Barber/images/interior-1.png"
         alt=""
         fill
         priority

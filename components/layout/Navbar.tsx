@@ -39,7 +39,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <Image
-              src="/images/logo.png"
+              src="/Don-t-Panic-Barber/images/logo.png"
               alt="Don't Panic Barber Shop"
               width={48}
               height={48}

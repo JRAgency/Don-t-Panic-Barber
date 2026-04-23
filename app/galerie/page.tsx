@@ -9,17 +9,17 @@ export const metadata: Metadata = {
 }
 
 const photos = [
-  { src: '/images/cut-1.png', alt: 'Haarschnitt', pos: 'object-top' },
-  { src: '/images/cut-2.png', alt: 'Haarschnitt', pos: 'object-top' },
-  { src: '/images/cut-3.png', alt: 'Haarschnitt', pos: 'object-top' },
-  { src: '/images/exterior.png', alt: "Don't Panic Barber Shop Mannheim", pos: 'object-center' },
-  { src: '/images/cut-4.png', alt: 'Haarschnitt', pos: 'object-top' },
-  { src: '/images/cut-5.png', alt: 'Haarschnitt', pos: 'object-top' },
-  { src: '/images/interior-1.png', alt: 'Innenraum', pos: 'object-center' },
-  { src: '/images/cut-6.png', alt: 'Haarschnitt', pos: 'object-top' },
-  { src: '/images/cut-7.png', alt: 'Haarschnitt', pos: 'object-top' },
-  { src: '/images/interior-2.png', alt: 'Barber Stationen', pos: 'object-center' },
-  { src: '/images/logo-dark.png', alt: "Don't Panic Barber Shop Logo", pos: 'object-center' },
+  { src: '/Don-t-Panic-Barber/images/cut-1.png', alt: 'Haarschnitt', pos: 'object-top' },
+  { src: '/Don-t-Panic-Barber/images/cut-2.png', alt: 'Haarschnitt', pos: 'object-top' },
+  { src: '/Don-t-Panic-Barber/images/cut-3.png', alt: 'Haarschnitt', pos: 'object-top' },
+  { src: '/Don-t-Panic-Barber/images/exterior.png', alt: "Don't Panic Barber Shop Mannheim", pos: 'object-center' },
+  { src: '/Don-t-Panic-Barber/images/cut-4.png', alt: 'Haarschnitt', pos: 'object-top' },
+  { src: '/Don-t-Panic-Barber/images/cut-5.png', alt: 'Haarschnitt', pos: 'object-top' },
+  { src: '/Don-t-Panic-Barber/images/interior-1.png', alt: 'Innenraum', pos: 'object-center' },
+  { src: '/Don-t-Panic-Barber/images/cut-6.png', alt: 'Haarschnitt', pos: 'object-top' },
+  { src: '/Don-t-Panic-Barber/images/cut-7.png', alt: 'Haarschnitt', pos: 'object-top' },
+  { src: '/Don-t-Panic-Barber/images/interior-2.png', alt: 'Barber Stationen', pos: 'object-center' },
+  { src: '/Don-t-Panic-Barber/images/logo-dark.png', alt: "Don't Panic Barber Shop Logo", pos: 'object-center' },
 ]
 
 export default function GaleriePage() {
