@@ -1,15 +1,16 @@
 export default function CTA() {
   return (
     <section className="py-24 md:py-32 border-t border-white/10 noise relative overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
+      <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 60% 60% at 80% 50%, rgba(201,160,122,0.05) 0%, transparent 70%), #0a0a0a' }} />
 
-        {/* Heading + buttons – split layout */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
+        {/* Split: heading left, buttons right */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-16">
           <div>
             <p className="section-label mb-5">Kein Termin nötig</p>
-            <h2 className="font-display text-[clamp(3rem,8vw,8rem)] uppercase leading-none">
+            <h2 className="font-display text-[clamp(3rem,8vw,8rem)] uppercase leading-none text-[#f0ece4]">
               Komm einfach<br />
-              <span className="text-outline">vorbei.</span>
+              <span className="text-outline-accent">vorbei.</span>
             </h2>
           </div>
 
@@ -33,20 +34,20 @@ export default function CTA() {
           </div>
         </div>
 
-        {/* Info – three columns, left-aligned */}
-        <div className="border-t border-white/10 pt-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
+        {/* Info with amber accents */}
+        <div className="border-t border-[#C9A07A]/20 pt-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
           <div>
             <p className="section-label mb-3">Adresse</p>
-            <p className="font-body text-sm leading-relaxed text-[#f5f5f5]/80">
+            <p className="font-body text-sm leading-relaxed text-[#f0ece4]/75">
               Mollstraße 6<br />68165 Mannheim
             </p>
           </div>
           <div>
             <p className="section-label mb-3">Öffnungszeiten</p>
-            <p className="font-body text-sm leading-relaxed text-[#f5f5f5]/80">
+            <p className="font-body text-sm leading-relaxed text-[#f0ece4]/75">
               Di–Fr: 9:30–19:00 Uhr<br />
               Sa: 9:00–17:00 Uhr<br />
-              <span className="text-[#f5f5f5]/30">Mo + So geschlossen</span>
+              <span className="text-[#f0ece4]/25">Mo + So geschlossen</span>
             </p>
           </div>
           <div>
@@ -55,7 +56,7 @@ export default function CTA() {
               href="https://www.instagram.com/dontpanicbarber"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-display text-2xl uppercase hover:opacity-60 transition-opacity"
+              className="font-display text-2xl uppercase hover:text-[#C9A07A] transition-colors"
             >
               @dontpanicbarber
             </a>

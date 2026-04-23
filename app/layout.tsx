@@ -88,7 +88,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de" className={`${bebasNeue.variable} ${inter.variable}`}>
-      <body className="bg-[#0a0a0a] text-[#f5f5f5] font-body antialiased">
+      <body className="bg-[#0a0a0a] font-body antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

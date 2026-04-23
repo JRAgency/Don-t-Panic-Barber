@@ -4,13 +4,13 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-end">
 
-          {/* Text – overlaps image on desktop via z-index */}
+          {/* Text */}
           <div className="lg:col-span-5 lg:pr-12 pb-10 lg:pb-0 lg:relative lg:z-10">
             <p className="section-label mb-6">Über uns</p>
-            <h2 className="font-display text-5xl md:text-7xl uppercase leading-none mb-8">
+            <h2 className="font-display text-5xl md:text-7xl uppercase leading-none mb-8 text-[#f0ece4]">
               Mehr als nur<br />ein Haarschnitt
             </h2>
-            <div className="space-y-4 font-body text-[#f5f5f5]/60 leading-relaxed text-sm">
+            <div className="space-y-4 font-body text-[#f0ece4]/55 leading-relaxed text-sm">
               <p>
                 Don&apos;t Panic steht für präzise Arbeit, ehrliches Handwerk und einen
                 Ort, an dem du dich wohlfühlst. Kein Bullshit, kein Termin-Stress –
@@ -18,23 +18,32 @@ export default function About() {
               </p>
             </div>
 
-            {/* Single statement instead of generic stats */}
-            <div className="mt-10 border-l-2 border-white/30 pl-5">
-              <p className="font-display text-2xl md:text-3xl uppercase leading-tight text-[#f5f5f5]/90">
+            {/* Statement with amber accent */}
+            <div className="mt-10 border-l-2 border-[#C9A07A] pl-5">
+              <p className="font-display text-2xl md:text-3xl uppercase leading-tight text-[#f0ece4]/90">
                 Seit Tag 1.<br />Kein Termin.<br />Nur dein Schnitt.
               </p>
             </div>
           </div>
 
-          {/* Image – wider, pulls slightly left on desktop */}
+          {/* Image – wider */}
           <div className="lg:col-span-7 relative noise">
-            <div className="relative aspect-[4/5] bg-white/[0.04] border border-white/10 overflow-hidden lg:-mr-8">
+            <div className="relative aspect-[4/5] overflow-hidden lg:-mr-8"
+              style={{ background: 'linear-gradient(135deg, #111 0%, #0d0d0d 100%)' }}
+            >
+              {/* Placeholder inner border */}
+              <div className="absolute inset-4 border border-[#C9A07A]/10 pointer-events-none" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <p className="font-display text-8xl text-white/[0.06] select-none">FOTO</p>
+                <p className="font-display text-8xl text-white/[0.04] select-none">FOTO</p>
               </div>
+              {/* Amber corner accents */}
+              <div className="absolute top-4 left-4 w-6 h-6 border-l-2 border-t-2 border-[#C9A07A]/40" />
+              <div className="absolute top-4 right-4 w-6 h-6 border-r-2 border-t-2 border-[#C9A07A]/40" />
+              <div className="absolute bottom-4 left-4 w-6 h-6 border-l-2 border-b-2 border-[#C9A07A]/40" />
+              <div className="absolute bottom-4 right-4 w-6 h-6 border-r-2 border-b-2 border-[#C9A07A]/40" />
               {/* Year tag */}
-              <div className="absolute bottom-4 right-4 border border-white/20 px-3 py-1">
-                <p className="font-body text-xs uppercase tracking-widest text-[#f5f5f5]/50">2024</p>
+              <div className="absolute bottom-6 right-6 border border-[#C9A07A]/30 px-3 py-1 bg-[#0a0a0a]/60">
+                <p className="font-body text-xs uppercase tracking-widest text-[#C9A07A]/70">2024</p>
               </div>
             </div>
           </div>

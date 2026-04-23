@@ -3,35 +3,46 @@ import Link from 'next/link'
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden noise">
-      <div className="absolute inset-0 bg-[#0a0a0a]" />
+      {/* Background: near-black with subtle warm amber glow top-left */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse 70% 55% at 25% 55%, rgba(201,160,122,0.07) 0%, transparent 65%), #0a0a0a',
+        }}
+      />
 
-      {/* Vertical label – right side */}
+      {/* Vertical label – right edge */}
       <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 hidden md:flex items-center gap-3">
         <span className="text-vertical section-label tracking-[0.4em]">
           MANNHEIM · EST. 2024
         </span>
-        <div className="w-px h-24 bg-white/20" />
+        <div className="w-px h-24 bg-[#C9A07A]/30" />
       </div>
 
+      {/* Thin barber-red top stripe */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#8B1A1A] to-transparent opacity-70" />
+
       <div className="relative z-10 px-4 sm:px-8 lg:px-16 pt-28 pb-16">
-        {/* Small top label */}
         <p className="section-label mb-6 ml-1">Mollstraße 6 · 68165 Mannheim</p>
 
-        {/* Main heading – intentionally bleeds right */}
+        {/* Main heading */}
         <h1 className="font-display leading-[0.88] uppercase -ml-1">
-          <span className="block text-[clamp(5rem,18vw,17rem)] tracking-tighter text-[#f5f5f5]">
+          <span className="block text-[clamp(5rem,18vw,17rem)] tracking-tighter text-[#f0ece4]">
             DON&apos;T
           </span>
-          <span className="block text-[clamp(5rem,18vw,17rem)] tracking-tighter text-outline">
+          <span className="block text-[clamp(5rem,18vw,17rem)] tracking-tighter text-outline-accent">
             PANIC
           </span>
         </h1>
 
-        {/* Skewed divider */}
-        <div className="relative my-8 md:my-10 h-px bg-white/20 max-w-2xl">
-          <span className="absolute left-0 -top-3 font-display text-sm tracking-[0.5em] uppercase text-[#f5f5f5]/50">
+        {/* Separator */}
+        <div className="relative my-8 md:my-10 max-w-2xl flex items-center gap-4">
+          <div className="flex-1 h-px bg-[#C9A07A]/40" />
+          <span className="font-display text-sm tracking-[0.5em] uppercase text-[#C9A07A]">
             Barber Shop
           </span>
+          <div className="w-8 h-px bg-[#C9A07A]/40" />
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 max-w-sm">
@@ -48,7 +59,7 @@ export default function Hero() {
           </Link>
         </div>
 
-        {/* Info strip – left-bordered instead of gap-px grid */}
+        {/* Info strip */}
         <div className="mt-16 md:mt-20 flex flex-wrap gap-0 max-w-2xl">
           {[
             { label: 'Di – Fr', value: '9:30 – 19:00' },
@@ -56,9 +67,14 @@ export default function Hero() {
             { label: 'Adresse', value: 'Mollstraße 6' },
             { label: 'Buchung', value: 'Walk-in' },
           ].map((item) => (
-            <div key={item.label} className="border-l-2 border-white/20 pl-4 pr-8 py-2 hover:border-white/50 transition-colors">
+            <div
+              key={item.label}
+              className="group border-l-2 border-[#f0ece4]/15 hover:border-[#C9A07A] pl-4 pr-8 py-2 transition-colors duration-300"
+            >
               <p className="section-label mb-0.5">{item.label}</p>
-              <p className="font-display text-lg md:text-xl">{item.value}</p>
+              <p className="font-display text-lg md:text-xl group-hover:text-[#C9A07A] transition-colors">
+                {item.value}
+              </p>
             </div>
           ))}
         </div>
