@@ -4,6 +4,7 @@ import Marquee from '@/components/ui/Marquee'
 import About from '@/components/home/About'
 import ServicesPreview from '@/components/home/ServicesPreview'
 import GalleryTeaser from '@/components/home/GalleryTeaser'
+import MapSection from '@/components/home/MapSection'
 import CTA from '@/components/home/CTA'
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function Home() {
       <About />
       <ServicesPreview />
       <GalleryTeaser />
+      <MapSection />
       <CTA />
     </>
   )

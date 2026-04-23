@@ -1,6 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+const photos = [
+  { src: '/Don-t-Panic-Barber/images/cut-1.png', alt: 'Haarschnitt', num: '01', pos: 'object-top', col: '1 / 3', row: '1' },
+  { src: '/Don-t-Panic-Barber/images/cut-4.png', alt: 'Haarschnitt', num: '02', pos: 'object-top', col: '3', row: '1' },
+  { src: '/Don-t-Panic-Barber/images/exterior.png', alt: "Don't Panic Barber Shop", num: '03', pos: 'object-center', col: '1', row: '2' },
+  { src: '/Don-t-Panic-Barber/images/cut-2.png', alt: 'Haarschnitt', num: '04', pos: 'object-top', col: '2', row: '2' },
+  { src: '/Don-t-Panic-Barber/images/cut-3.png', alt: 'Haarschnitt', num: '05', pos: 'object-top', col: '3', row: '2' },
+]
+
 export default function GalleryTeaser() {
   return (
     <section className="py-24 md:py-32 border-t border-white/10" style={{ background: '#0d0d0d' }}>
@@ -22,47 +30,37 @@ export default function GalleryTeaser() {
           </a>
         </div>
 
-        {/* Asymmetric grid – 3 cols, 2 rows, no empty cells */}
         <div
           className="grid gap-1"
-          style={{ gridTemplateColumns: 'repeat(3, 1fr)', gridTemplateRows: '320px 220px' }}
+          style={{ gridTemplateColumns: 'repeat(3, 1fr)', gridTemplateRows: '380px 240px' }}
         >
-          {/* Wide feature: top-left (2 cols × 1 row) */}
-          <div
-            className="relative overflow-hidden group"
-            style={{ gridColumn: '1 / 3' }}
-          >
-            <Image src="/Don-t-Panic-Barber/images/cut-1.png" alt="Haarschnitt" fill className="object-cover object-top" />
-            <div className="absolute top-3 left-3 w-5 h-5 border-l border-t border-[#C9A07A]/60 z-10" />
-            <div className="absolute bottom-3 right-3 w-5 h-5 border-r border-b border-[#C9A07A]/60 z-10" />
-            <div className="absolute inset-0 bg-[#C9A07A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-            <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-              <span className="border border-[#C9A07A]/60 px-2 py-0.5 font-body text-[10px] uppercase tracking-widest text-[#C9A07A]">
-                Featured
+          {photos.map((p) => (
+            <div
+              key={p.src}
+              className="relative overflow-hidden group cursor-pointer"
+              style={{ gridColumn: p.col, gridRow: p.row }}
+            >
+              <Image
+                src={p.src}
+                alt={p.alt}
+                fill
+                className={`object-cover ${p.pos} transition-transform duration-700 group-hover:scale-105`}
+              />
+              {/* Dark overlay lifts on hover */}
+              <div className="absolute inset-0 bg-[#0a0a0a]/30 group-hover:bg-transparent transition-colors duration-500" />
+              {/* Editorial number */}
+              <span className="absolute top-3 right-4 font-display text-[#C9A07A]/50 text-3xl z-10 group-hover:text-[#C9A07A]/90 transition-colors duration-300">
+                {p.num}
               </span>
+              {/* Amber corner accent on first (large) item only */}
+              {p.num === '01' && (
+                <>
+                  <div className="absolute top-3 left-3 w-5 h-5 border-l border-t border-[#C9A07A]/50 z-10" />
+                  <div className="absolute bottom-3 left-3 w-5 h-5 border-l border-b border-[#C9A07A]/50 z-10" />
+                </>
+              )}
             </div>
-          </div>
-
-          {/* Tall item: right column (1 col × 2 rows) */}
-          <div
-            className="relative overflow-hidden group"
-            style={{ gridRow: '1 / 3' }}
-          >
-            <Image src="/Don-t-Panic-Barber/images/cut-4.png" alt="Haarschnitt" fill className="object-cover object-top" />
-            <div className="absolute inset-0 bg-[#C9A07A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-
-          {/* Bottom-left: exterior */}
-          <div className="relative overflow-hidden group">
-            <Image src="/Don-t-Panic-Barber/images/exterior.png" alt="Don't Panic Barber Shop" fill className="object-cover object-center" />
-            <div className="absolute inset-0 bg-[#C9A07A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-
-          {/* Bottom-middle: cut */}
-          <div className="relative overflow-hidden group">
-            <Image src="/Don-t-Panic-Barber/images/cut-2.png" alt="Haarschnitt" fill className="object-cover object-top" />
-            <div className="absolute inset-0 bg-[#C9A07A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
+          ))}
         </div>
 
         <div className="mt-8 flex justify-end">
