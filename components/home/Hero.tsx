@@ -1,14 +1,25 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden noise">
-      {/* Background: near-black with subtle warm amber glow top-left */}
+      {/* Background photo */}
+      <Image
+        src="/images/interior-1.png"
+        alt=""
+        fill
+        priority
+        className="object-cover object-center opacity-25"
+      />
+      {/* Dark gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/70 via-[#0a0a0a]/50 to-[#0a0a0a]" />
+      {/* Subtle amber glow */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(ellipse 70% 55% at 25% 55%, rgba(201,160,122,0.07) 0%, transparent 65%), #0a0a0a',
+            'radial-gradient(ellipse 70% 55% at 25% 55%, rgba(201,160,122,0.06) 0%, transparent 65%)',
         }}
       />
 

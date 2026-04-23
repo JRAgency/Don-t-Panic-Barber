@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Galerie',
@@ -7,9 +8,21 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://dontpanicbarber.de/galerie' },
 }
 
-export default function GaleriePage() {
-  const placeholders = Array.from({ length: 12 }, (_, i) => i + 1)
+const photos = [
+  { src: '/images/cut-1.png', alt: 'Haarschnitt', pos: 'object-top' },
+  { src: '/images/cut-2.png', alt: 'Haarschnitt', pos: 'object-top' },
+  { src: '/images/cut-3.png', alt: 'Haarschnitt', pos: 'object-top' },
+  { src: '/images/exterior.png', alt: "Don't Panic Barber Shop Mannheim", pos: 'object-center' },
+  { src: '/images/cut-4.png', alt: 'Haarschnitt', pos: 'object-top' },
+  { src: '/images/cut-5.png', alt: 'Haarschnitt', pos: 'object-top' },
+  { src: '/images/interior-1.png', alt: 'Innenraum', pos: 'object-center' },
+  { src: '/images/cut-6.png', alt: 'Haarschnitt', pos: 'object-top' },
+  { src: '/images/cut-7.png', alt: 'Haarschnitt', pos: 'object-top' },
+  { src: '/images/interior-2.png', alt: 'Barber Stationen', pos: 'object-center' },
+  { src: '/images/logo-dark.png', alt: "Don't Panic Barber Shop Logo", pos: 'object-center' },
+]
 
+export default function GaleriePage() {
   return (
     <div className="min-h-screen pt-24 pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,15 +32,18 @@ export default function GaleriePage() {
         </div>
 
         <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-1">
-          {placeholders.map((i) => (
+          {photos.map((photo) => (
             <div
-              key={i}
-              className="relative aspect-square bg-white/[0.03] border border-white/10 overflow-hidden group cursor-pointer"
+              key={photo.src}
+              className="relative aspect-square overflow-hidden group cursor-pointer"
             >
-              <div className="absolute inset-0 flex items-center justify-center opacity-15">
-                <p className="font-display text-5xl text-white/30">FOTO</p>
-              </div>
-              <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className={`object-cover ${photo.pos} transition-transform duration-500 group-hover:scale-105`}
+              />
+              <div className="absolute inset-0 bg-[#0a0a0a]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           ))}
         </div>

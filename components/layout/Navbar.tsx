@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 const links = [
@@ -36,11 +37,15 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link
-            href="/"
-            className="font-display text-2xl md:text-3xl tracking-wide hover:opacity-70 transition-opacity"
-          >
-            DON&apos;T PANIC
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <Image
+              src="/images/logo.png"
+              alt="Don't Panic Barber Shop"
+              width={48}
+              height={48}
+              className="h-10 w-10 md:h-12 md:w-12 object-contain"
+              style={{ mixBlendMode: 'screen' }}
+            />
           </Link>
 
           <ul className="hidden md:flex items-center gap-8">

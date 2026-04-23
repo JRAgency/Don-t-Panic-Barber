@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function About() {
   return (
     <section className="py-24 md:py-32 border-t border-white/10 overflow-hidden">
@@ -27,23 +29,22 @@ export default function About() {
           </div>
 
           {/* Image – wider */}
-          <div className="lg:col-span-7 relative noise">
-            <div className="relative aspect-[4/5] overflow-hidden lg:-mr-8"
-              style={{ background: 'linear-gradient(135deg, #111 0%, #0d0d0d 100%)' }}
-            >
-              {/* Placeholder inner border */}
-              <div className="absolute inset-4 border border-[#C9A07A]/10 pointer-events-none" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="font-display text-8xl text-white/[0.04] select-none">FOTO</p>
-              </div>
+          <div className="lg:col-span-7 relative">
+            <div className="relative aspect-[4/5] overflow-hidden lg:-mr-8">
+              <Image
+                src="/images/exterior.png"
+                alt="Don't Panic Barber Shop Mannheim"
+                fill
+                className="object-cover object-center"
+              />
               {/* Amber corner accents */}
-              <div className="absolute top-4 left-4 w-6 h-6 border-l-2 border-t-2 border-[#C9A07A]/40" />
-              <div className="absolute top-4 right-4 w-6 h-6 border-r-2 border-t-2 border-[#C9A07A]/40" />
-              <div className="absolute bottom-4 left-4 w-6 h-6 border-l-2 border-b-2 border-[#C9A07A]/40" />
-              <div className="absolute bottom-4 right-4 w-6 h-6 border-r-2 border-b-2 border-[#C9A07A]/40" />
+              <div className="absolute top-4 left-4 w-6 h-6 border-l-2 border-t-2 border-[#C9A07A]/60 z-10" />
+              <div className="absolute top-4 right-4 w-6 h-6 border-r-2 border-t-2 border-[#C9A07A]/60 z-10" />
+              <div className="absolute bottom-4 left-4 w-6 h-6 border-l-2 border-b-2 border-[#C9A07A]/60 z-10" />
+              <div className="absolute bottom-4 right-4 w-6 h-6 border-r-2 border-b-2 border-[#C9A07A]/60 z-10" />
               {/* Year tag */}
-              <div className="absolute bottom-6 right-6 border border-[#C9A07A]/30 px-3 py-1 bg-[#0a0a0a]/60">
-                <p className="font-body text-xs uppercase tracking-widest text-[#C9A07A]/70">2024</p>
+              <div className="absolute bottom-6 right-6 border border-[#C9A07A]/40 px-3 py-1 bg-[#0a0a0a]/70 z-10">
+                <p className="font-body text-xs uppercase tracking-widest text-[#C9A07A]/80">2024</p>
               </div>
             </div>
           </div>

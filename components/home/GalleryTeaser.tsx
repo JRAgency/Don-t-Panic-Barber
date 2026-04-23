@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function GalleryTeaser() {
   return (
@@ -29,20 +30,14 @@ export default function GalleryTeaser() {
           {/* Large feature item 2×2 */}
           <div
             className="relative overflow-hidden group"
-            style={{
-              gridColumn: '1 / 3',
-              gridRow: '1 / 3',
-              background: 'linear-gradient(145deg, #141414, #0d0d0d)',
-            }}
+            style={{ gridColumn: '1 / 3', gridRow: '1 / 3' }}
           >
-            <div className="absolute inset-0 flex items-center justify-center opacity-[0.06]">
-              <p className="font-display text-8xl text-[#f0ece4]">FOTO</p>
-            </div>
+            <Image src="/images/cut-1.png" alt="Haarschnitt" fill className="object-cover object-center" />
             {/* Amber corner accents */}
-            <div className="absolute top-3 left-3 w-5 h-5 border-l border-t border-[#C9A07A]/50" />
-            <div className="absolute bottom-3 right-3 w-5 h-5 border-r border-b border-[#C9A07A]/50" />
-            <div className="absolute inset-0 bg-[#C9A07A]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-            <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute top-3 left-3 w-5 h-5 border-l border-t border-[#C9A07A]/60 z-10" />
+            <div className="absolute bottom-3 right-3 w-5 h-5 border-r border-b border-[#C9A07A]/60 z-10" />
+            <div className="absolute inset-0 bg-[#C9A07A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+            <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
               <span className="border border-[#C9A07A]/60 px-2 py-0.5 font-body text-[10px] uppercase tracking-widest text-[#C9A07A]">
                 Featured
               </span>
@@ -50,35 +45,32 @@ export default function GalleryTeaser() {
           </div>
 
           {/* Small items 1×1 */}
-          {[2, 3, 4].map((i) => (
-            <div
-              key={i}
-              className="relative overflow-hidden group"
-              style={{ background: '#111' }}
-            >
-              <div className="absolute inset-0 flex items-center justify-center opacity-[0.05]">
-                <p className="font-display text-4xl text-[#f0ece4]">FOTO</p>
-              </div>
-              <div className="absolute inset-0 bg-[#C9A07A]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {[
+            { src: '/images/cut-2.png', alt: 'Haarschnitt' },
+            { src: '/images/cut-3.png', alt: 'Haarschnitt' },
+            { src: '/images/cut-4.png', alt: 'Haarschnitt' },
+          ].map((item) => (
+            <div key={item.src} className="relative overflow-hidden group">
+              <Image src={item.src} alt={item.alt} fill className="object-cover object-top" />
+              <div className="absolute inset-0 bg-[#C9A07A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           ))}
 
           {/* Wide items 2×1 */}
-          {[5, 6].map((i) => (
-            <div
-              key={i}
-              className="relative overflow-hidden group"
-              style={{
-                gridColumn: i === 5 ? '1 / 3' : '3 / 5',
-                background: '#111',
-              }}
-            >
-              <div className="absolute inset-0 flex items-center justify-center opacity-[0.05]">
-                <p className="font-display text-4xl text-[#f0ece4]">FOTO</p>
-              </div>
-              <div className="absolute inset-0 bg-[#C9A07A]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          ))}
+          <div
+            className="relative overflow-hidden group"
+            style={{ gridColumn: '1 / 3' }}
+          >
+            <Image src="/images/exterior.png" alt="Don't Panic Barber Shop" fill className="object-cover object-center" />
+            <div className="absolute inset-0 bg-[#C9A07A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </div>
+          <div
+            className="relative overflow-hidden group"
+            style={{ gridColumn: '3 / 5' }}
+          >
+            <Image src="/images/cut-5.png" alt="Haarschnitt" fill className="object-cover object-top" />
+            <div className="absolute inset-0 bg-[#C9A07A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </div>
         </div>
 
         <div className="mt-8 flex justify-end">
