@@ -34,7 +34,7 @@ export default function Hero() {
       {/* Thin barber-red top stripe */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#8B1A1A] to-transparent opacity-70" />
 
-      <div className="relative z-10 px-4 sm:px-8 lg:px-16 pt-28 pb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-28 pb-16">
         <p className="section-label mb-6 ml-1">Mollstraße 6 · 68165 Mannheim</p>
 
         {/* Main heading */}
